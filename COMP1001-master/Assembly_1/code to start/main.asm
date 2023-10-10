@@ -6,6 +6,9 @@ ExitProcess PROTO, dwExitCode: DWORD  ; Exit process prototype
 
 .data ; data segment
 	; define your variables here
+	power WORD 2200
+
+
 
 .code ; code segment
 
