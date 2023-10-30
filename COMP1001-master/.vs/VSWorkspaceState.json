@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
+    "\\Assembly_1",
     "\\Assembly_1\\Solutions",
-    "\\C Programming I"
+    "\\Assembly_2",
+    "\\Assembly_2\\Solutions"
   ],
+  "SelectedNode": "\\C Programming I",
   "PreviewInSolutionExplorer": false
 }
