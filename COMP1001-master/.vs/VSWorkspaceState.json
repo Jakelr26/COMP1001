@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assembly_1",
-    "\\Assembly_1\\Solutions",
-    "\\Assembly_2",
-    "\\Assembly_2\\Solutions"
+    "\\Assembly_2\\Solutions",
+    "\\C Programming II",
+    "\\C Programming II\\main folder"
   ],
-  "SelectedNode": "\\C Programming I",
+  "SelectedNode": "\\C Programming II\\main folder\\measure_time.cpp",
   "PreviewInSolutionExplorer": false
 }
