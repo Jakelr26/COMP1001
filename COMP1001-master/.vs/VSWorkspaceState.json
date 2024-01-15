@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\C Programming II\\main folder",
-    "\\cache"
+    "\\Vectorization 1st lab session",
+    "\\Vectorization 2nd lab session",
+    "\\Vectorization 2nd lab session\\Solutions"
   ],
-  "SelectedNode": "\\cache\\row_col_wise.cpp",
+  "SelectedNode": "\\Vectorization 2nd lab session\\Solutions\\MVM.h",
   "PreviewInSolutionExplorer": false
 }
