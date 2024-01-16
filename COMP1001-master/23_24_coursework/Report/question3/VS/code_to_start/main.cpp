@@ -25,12 +25,15 @@ void write_image2(const char* filename, unsigned char* output_image);
 void openfile(const char* filename, FILE** finput);
 int getint(FILE* fp);
 
-//CRITICAL POINT: images' paths - You need to change these paths
-#define IN "C:\\Users\\vboxuser\\source\\repos\\image_processing\\image_processing\\input_images\\a1.pgm"
-#define OUT "C:\\Users\\vboxuser\\source\\repos\\image_processing\\image_processing\\output_images\\blurred.pgm"
-#define OUT2 "C:\\Users\\vboxuser\\source\\repos\\image_processing\\image_processing\\output_images\\edge_detection.pgm"
 
-//IMAGE DIMENSIONS
+
+//CRITICAL POINT: images' paths - You need to change these paths -- DONE
+//#define IN "C:\\Users\\vboxuser\\source\\repos\\image_processing\\image_processing\\input_images\\a1.pgm"
+#define IN "C:\\Git Hub\\COMP1001\\COMP1001-master\\23_24_coursework\\Report\\question3\\VS\\code_to_start\\input_images\\a1.pgm"
+#define OUT "C:\\Git Hub\\COMP1001\\COMP1001-master\\23_24_coursework\\Report\\question3\\VS\\code_to_start\\output_images\\blurred.pgm"
+#define OUT2 "C:\\Git Hub\\COMP1001\\COMP1001-master\\23_24_coursework\\Report\\question3\\VS\\code_to_start\\output_images\\edge_detection.pgm"
+
+//IMAGE DIMENSIONS -- NEEDS to change for each image
 #define M 512  //cols
 #define N 512  //rows
 
@@ -38,7 +41,12 @@ int getint(FILE* fp);
 //CRITICAL POINT:these arrays are defined statically. Consider creating these arrays dynamically instead.
 unsigned char frame1[N * M];//input image
 unsigned char filt[N * M];//output filtered image
-unsigned char gradient[N * M];//output image
+unsigned char gradient[N * M];//output image*/
+
+/*/CRITICAL POINT:these arrays are defined statically. Consider creating these arrays dynamically instead.
+unsigned char* frame1 = NULL;//input image
+unsigned char* filt = NULL;//output filtered image
+unsigned char* gradient = NULL;//output image*/
 
 
 const signed char Mask[5][5] = {//2d gaussian mask with integers
@@ -66,8 +74,28 @@ errno_t err;
 
 int main() {
 
+	char INS[1000];
+	char INFN[10];
+	int a = 0;
+	for (a = 0; a <= 30; a++) {
+		sprintf_s(INFN, "a%d.pgm", a);
 
-	read_image(IN);//read image from disc
+		strcpy_s(INS, "C:\\Git Hub\\COMP1001\\COMP1001-master\\23_24_coursework\\Report\\question3\\VS\\code_to_start\\input_images\\");
+
+		strcat_s(INS, INFN);
+
+		printf("%s", INS);
+	}
+	/*sprintf_s(INFN, "a%d.pgm", a);
+
+	strcpy_s(INS, "C:\\Git Hub\\COMP1001\\COMP1001-master\\23_24_coursework\\Report\\question3\\VS\\code_to_start\\input_images\\");
+
+	strcat_s(INS, INFN);
+
+	printf("%s", INS);*/
+
+	//LOOP this, but we need it to input different files 
+	read_image(INS);//read image from disc
 
 	Gaussian_Blur(); //blur the image (reduce noise)
 	Sobel(); //apply edge detection
